@@ -60,9 +60,9 @@ public class App {
             System.out.println("Reservation: " + reservation);
             }                            
         }
-        //ESSA LÓGICA ACIMA É RUIM, JÁ TEM ALGUNS MÉTODOS DENTRO DA CLASSE RESERVATION, PORÉM 
-        // PORQUE ELA ESTÁ SENDO FEITA NO PROGRAMA PRINCICPAL
-        // ELA DEVERIA SER FEITAS NA PRÓPRIA CLASSE RESERVATION
+        //ESSA LÓGICA ACIMA É RUIM, JÁ TEM ALGUNS MÉTODOS DENTRO DA CLASSE RESERVATION, PORÉM NÃO TEM
+        // TRATAMENTO DE EXCEÇÕES
+        
 
         sc.close();              
     }     
