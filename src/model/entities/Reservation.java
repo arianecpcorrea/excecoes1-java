@@ -55,20 +55,21 @@ public class Reservation {
     //     return ChronoUnit.MINUTES.between(entrada, saida);
     // }
     
+
+    //ABAIXO VOU LANÇAR UMA EXCEÇÃO E VOU INSTANCIAR A ILLEGALARGUMENTEXCECPTION
       
-    public String updateDates(LocalDate checkIn, LocalDate checkOut) {
+    public void updateDates(LocalDate checkIn, LocalDate checkOut) {
         
         LocalDate now = LocalDate.now();
         if (checkIn.isBefore(now) || checkOut.isBefore(now)) {
-            return "Error in reservation: Reservation dates for update must be future dates";                
+            throw new IllegalArgumentException("Reservation dates for update must be future dates");                
         }
         if (checkIn.isAfter(checkOut)) {
-            return "Error in reservation: Check-out date must be after check-in date";  
+            throw new IllegalArgumentException("Check-out date must be after check-in date");  
         }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        // ler este checkOut objeto recebe o checkOut argumento
-        return null; // esse é o critério para falar que a operação lá em cima NÃO deu nenhum erro
+        
     }
     // vou implementar um toString para ele imprimir a minha reserva
     @Override
