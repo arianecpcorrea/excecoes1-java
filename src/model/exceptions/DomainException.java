@@ -29,6 +29,7 @@ package model.exceptions;
  //compiler errors and without bothering to specify or catch any exceptions. Although this may seem 
  // convenient to the programmer, it sidesteps the intent of the catch or specify requirement and 
  //can cause problems for others using your classes.
+ https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html#:~:text=Generally%20speaking%2C%20do%20not%20throw,exceptions%20your%20methods%20can%20throw.
 
 
 public class DomainException extends RuntimeException {

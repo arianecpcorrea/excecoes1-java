@@ -61,8 +61,7 @@ public class App {
         // eu coloquei um catch com um tipo de exceção genérico para que seja feito o upcasting
         //para o RuntimeException e daí dou a mensagem genérica de erro inesperado, por exemplo
         // em vez do número do quarto, coloque letra aaa
-        
-       
+               
         
         sc.close();              
     }     
