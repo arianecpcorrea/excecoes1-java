@@ -1,25 +1,21 @@
 
 
-
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
 import java.util.Scanner;
 import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 
 public class App {
-    public static void main(String[] args) { //no do professor deu exceção
-        // no parse, ou vc trata a exceção ou vc propaga a exceção no método onde vc está
-        //quando declaro essa throws eu digo que o meu método main pode lançar uma exceção, então
-        //quando eu tenho um método que pode lançar uma exceção, eu trato o método ou eu propago a 
-        //exceção.
+    //PERSONALIZE AS EXCEÇÕES
+    
+    public static void main(String[] args) { 
 
         Scanner sc = new Scanner(System.in);
-        Locale.setDefault(Locale.US);
-   
+        Locale.setDefault(Locale.US);   
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
         try {
@@ -54,15 +50,13 @@ public class App {
         catch (DateTimeParseException e) {
             System.out.println("Invalid date format");            
         }
-        catch (IllegalArgumentException e) {
+        catch (DomainException e) {
             System.out.println("Error in reservation: " + e.getMessage());            
-        } 
-                                
+        }                                 
         
         //ESSA LÓGICA ACIMA É BOA, POIS O MEU PROGRAMA NÃO PROPAGA EXCEÇÕES, ELE AS TRATA.
         // O MEU TRECHO DE CÓDIGO ACIMA NÃO TEM UMA VALIDAÇÃO, ELE É LINEAR.
         
-
         sc.close();              
     }     
 }
