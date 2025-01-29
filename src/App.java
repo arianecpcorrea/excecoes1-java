@@ -52,10 +52,17 @@ public class App {
         }
         catch (DomainException e) {
             System.out.println("Error in reservation: " + e.getMessage());            
-        }                                 
+        }  
+        catch (RuntimeException e) {
+            System.out.println("Unexpected Error");            
+        }                               
+        // para que o meu programa não quebre se der alguma exceção que não foi pensada, eu faço
+        //o catch acima
+        // eu coloquei um catch com um tipo de exceção genérico para que seja feito o upcasting
+        //para o RuntimeException e daí dou a mensagem genérica de erro inesperado, por exemplo
+        // em vez do número do quarto, coloque letra aaa
         
-        //ESSA LÓGICA ACIMA É BOA, POIS O MEU PROGRAMA NÃO PROPAGA EXCEÇÕES, ELE AS TRATA.
-        // O MEU TRECHO DE CÓDIGO ACIMA NÃO TEM UMA VALIDAÇÃO, ELE É LINEAR.
+       
         
         sc.close();              
     }     

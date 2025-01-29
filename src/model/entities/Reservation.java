@@ -19,7 +19,9 @@ public class Reservation {
     
     private static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
-    public Reservation (Integer roomNumber, LocalDate checkIn, LocalDate checkOut) throws DomainException {
+    public Reservation (Integer roomNumber, LocalDate checkIn, LocalDate checkOut) {// apaguei o 
+        //throws DomainException porque agora é RuntimeException
+
         // vou colocar essa exceção aqui no construtor pq é sempre bom tratar as exceções no
         //comecinho do método, isso é uma boa prática, programação defensiva
         if (checkIn.isAfter(checkOut)) {
@@ -66,8 +68,8 @@ public class Reservation {
 
     //ABAIXO VOU LANÇAR UMA EXCEÇÃO E VOU INSTANCIAR A ILLEGALARGUMENTEXCECPTION
       
-    public void updateDates(LocalDate checkIn, LocalDate checkOut) throws DomainException {
-        
+    public void updateDates(LocalDate checkIn, LocalDate checkOut) {
+        // apaguei aqui o throws DomainException pq do RuntimeException
         
         LocalDate now = LocalDate.now();
         if (checkIn.isBefore(now) || checkOut.isBefore(now)) {
